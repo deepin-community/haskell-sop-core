@@ -1,0 +1,7 @@
+signature Data.SOP where
+
+data NP :: (k -> Type) -> [k] -> Type where
+  Nil  :: NP f '[]
+  (:*) :: f x -> NP f xs -> NP f (x ': xs)
+
+infixr 5 :*
